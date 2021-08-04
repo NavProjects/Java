@@ -9,6 +9,7 @@ public class Human {
 	//constructor
 //	public Human() {
 //	}
+	
 	//methods
 	public void attack(Human human) {
 		human.setHealth(human.getHealth() - this.getStrength());

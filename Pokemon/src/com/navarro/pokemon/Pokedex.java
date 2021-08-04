@@ -8,7 +8,7 @@ public class Pokedex extends AbstractPokemon {
 		Pokemon pokemo = this.createPokemon(name, health, type);
 		myPokemon.add(pokemo);
 	}
-
+	public static int count = 0;
 
 	@Override
 	public void listPokemon() {

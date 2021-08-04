@@ -14,10 +14,5 @@ public abstract class AbstractPokemon implements PokemonInterface {
 		return info;
 	}
 
-	public void listPokemon() {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 }

@@ -5,6 +5,7 @@ public abstract class AbstractPokemon implements PokemonInterface {
 	@Override
 	public Pokemon createPokemon(String name, int health, String type) {
 		Pokemon pok = new Pokemon(name, type, health);
+		Pokedex.myPokemon.add(pok);
 		return pok;
 	}
 

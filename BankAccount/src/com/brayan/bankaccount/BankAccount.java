@@ -1,52 +1,67 @@
 package com.brayan.bankaccount;
 import java.util.Random;
 public class BankAccount {
+	
 	//member variables
+	private String name;
 	private double checkingBalance;
 	private double savingsBalance;
 	private String accountNumber;
 	private static int numberOfAccounts = 0;
 	private static double total = 0.00;
+	
 	//constructor
-	public BankAccount() {
+	public BankAccount(String name) {
 		numberOfAccounts ++;
+		this.setName(name);
 		this.setCheckingBalance(0.00);
 		this.setSavingsBalance(0.00);
 		this.setAccountNumber(account());
 	}
-	public BankAccount(double checking, double saving) {
+	
+	public BankAccount(String name, double checking, double saving) {
 		numberOfAccounts ++;
+		this.setName(name);
 		this.setCheckingBalance(checking);
 		this.setSavingsBalance(saving);
 		total = total + checking + saving;
 		this.setAccountNumber(account());
 	}
-	Random rand = new Random();
+	
+	
 	//methods
 	private String account() {
+		Random rand = new Random();
 		String acc = "";
 		for(int i = 0; i < 10; i++) {
 			acc += (rand.nextInt(10));
 		}
 		return acc;
 	}
+	
 	public String displayAccount() {
-		return this.getCheckingBalance() + "\n" + this.getSavingsBalance();
+		return this.getName() + " Checking Balance:" +this.getCheckingBalance() + 
+				"\n" + this.getName() + " Saving Balance:" + this.getSavingsBalance();
 	}
-	public double displayChecking() {
-		return this.checkingBalance;
+	
+	public String displayChecking() {
+		return this.getName() + " Checking Balance:" + this.checkingBalance;
 	}
-	public double displaySaving() {
-		return this.checkingBalance;
+	
+	public String displaySaving() {
+		return this.getName() + " Savings Balance:" + this.checkingBalance;
 	}
+	
 	public void depositCheck(double added) {
 		this.setCheckingBalance(this.checkingBalance + added);
 		total = total + added;
 	}
+	
 	public void depositSave(double added) {
 		this.setSavingsBalance(this.savingsBalance + added);
 		total = total + added;
 	}
+	
 	public void withdraw(double taken, String acc) {
 		if (acc == "Checking") {
 			if(taken < this.getCheckingBalance()) {				
@@ -62,6 +77,7 @@ public class BankAccount {
 			}
 		}
 	}
+	
 	// getters and setters
 	public double getCheckingBalance() {
 		return checkingBalance;
@@ -92,6 +108,12 @@ public class BankAccount {
 	}
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

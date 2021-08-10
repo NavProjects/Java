@@ -7,15 +7,17 @@
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-<title>Count</title>
+<title>The Bushido Code</title>
 </head>
 <body>
 	<div>
-		<h1>Home</h1>
-		<a href="/date" >Date Template</a>
-		<a href="/time">Time Template</a>
-		<a href="/form">login</a>
-		<c:out value="${count}"></c:out>
+		<ul>
+			<li>Loyalty</li>
+			<li>Courage</li>
+			<li>Veracity</li>
+			<li>Compassion</li>
+			<li>Honor</li>
+		</ul>
 	</div>
 	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

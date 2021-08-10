@@ -9,10 +9,12 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 <title>Insert title here</title>
 </head>
-<body>
+<body  onload=time()>
 	<div>
 		<h1>Time</h1>
-		<c:out value="${date}"></c:out>
+		<p id="date">
+		<c:out value="${date}"/>
+		</p>
 		<a href="/">go back</a>
 	</div>
 	<script src="/webjars/jquery/jquery.min.js"></script>

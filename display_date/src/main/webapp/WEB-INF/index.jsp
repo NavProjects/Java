@@ -12,7 +12,7 @@
 <body>
 	<div>
 		<h1>Home</h1>
-		<a href="/date">Date Template</a>
+		<a href="/date" >Date Template</a>
 		<a href="/time">Time Template</a>
 	</div>
 	<script src="/webjars/jquery/jquery.min.js"></script>

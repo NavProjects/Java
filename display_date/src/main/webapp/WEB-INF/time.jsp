@@ -12,7 +12,7 @@
 <body  onload=time()>
 	<div>
 		<h1>Time</h1>
-		<p id="date">
+		<p id="time">
 		<c:out value="${date}"/>
 		</p>
 		<a href="/">go back</a>

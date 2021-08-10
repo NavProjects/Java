@@ -7,13 +7,14 @@
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-<title>Insert title here</title>
+<title>Count</title>
 </head>
 <body>
 	<div>
 		<h1>Home</h1>
 		<a href="/date" >Date Template</a>
 		<a href="/time">Time Template</a>
+		<c:out value="${count}"></c:out>
 	</div>
 	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +15,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 	
 	@RequestMapping("/")
-	public String index() {
+	public String index(HttpSession session) {
+		if (session.getAttribute("count") == null) {
+			session.setAttribute("count", 0);
+		}
+		else {
+			session.setAttribute("count", (Integer) session.getAttribute("count") + 1);
+		}
 		return "index.jsp";
 	}
+	
+	@RequestMapping("/count")
+    public String showCount(HttpSession session, Model model) {
+        Integer currentCount = (Integer) session.getAttribute("count");
+        model.addAttribute("countToShow", currentCount);
+        return "showCount.jsp";
+    }
 
 	@RequestMapping("/date")
 	public String date(Model model) {

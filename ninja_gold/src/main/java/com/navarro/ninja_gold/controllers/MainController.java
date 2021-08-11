@@ -35,6 +35,7 @@ public class MainController {
 	}
 
 
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/{form}", method=RequestMethod.POST)
 	public String farm(@PathVariable("form") String form, HttpSession session) {
 		Random rand = new Random();

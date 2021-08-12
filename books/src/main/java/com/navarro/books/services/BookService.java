@@ -32,15 +32,19 @@ public class BookService {
             return null;
         }
     }
-    // updates a book
-    public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
-//    	System.out.println(updateBook.getClass());		
+    // updates a book api
+    public Book updateBooks(Long id, String title, String desc, String lang, Integer numOfPages) {
+//    	System.out.println(updateBooks.getClass());		
     	Book updateBook = bookRepository.findById(id).get();
     	updateBook.setTitle(title);
     	updateBook.setDescription(desc);
     	updateBook.setLanguage(lang);
     	updateBook.setNumberOfPages(numOfPages);
     	return bookRepository.save(updateBook);
+    }
+    // updates a book
+    public Book updateBook(Book bo) {
+    	return bookRepository.save(bo);
     }
     // deletes a book
     public void delete(Long id) {
@@ -49,4 +53,5 @@ public class BookService {
         		bookRepository.deleteById(id);;
         }
     }
+
 }

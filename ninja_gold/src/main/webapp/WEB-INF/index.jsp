@@ -38,14 +38,17 @@
 			</form>
 		</div>
 		<h3>Activities:</h3>
-		<div class="contain">
+		<div class="contain" >
 			<c:forEach  var="activity" items="${activity}">
-				<c:out value="${activity}" />
-				<br/>
+				<c:if test="${activity.contains('lost')}">
+					<p style="color:red;"><c:out value="${activity}"/></p>
+				</c:if>
+				<c:if test="${activity.contains('earned')}">
+					<p style="color:green;"><c:out value="${activity}"/></p>
+				</c:if>
 			</c:forEach>
 		</div>
 		<a href="/reset">RESET GOLD</a>
-		
 	</div>
 	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

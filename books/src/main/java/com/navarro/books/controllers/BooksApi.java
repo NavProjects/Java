@@ -46,7 +46,7 @@ public class BooksApi {
     			@RequestParam(value="description") String desc, 
     			@RequestParam(value="language") String lang, 
     			@RequestParam(value="pages") Integer numOfPages) {
-    	Book book = bookService.updateBook(id, title, desc, lang, numOfPages);
+    	Book book = bookService.updateBooks(id, title, desc, lang, numOfPages);
     	return book;
     }
     // delete method

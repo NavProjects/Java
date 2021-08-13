@@ -8,12 +8,12 @@
 		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.navarro.languages</groupId>
-	<artifactId>languages</artifactId>
+	<groupId>com.navarro.relationships</groupId>
+	<artifactId>relationships</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>languages</name>
-	<description>languages project</description>
+	<name>relationships</name>
+	<description>relationships project</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -120,6 +120,7 @@
             <version>3.6.0</version>
         </dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>

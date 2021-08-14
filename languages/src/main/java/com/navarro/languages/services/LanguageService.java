@@ -15,13 +15,10 @@ public class LanguageService {
 	public LanguageService(LanguageRepository languageRepository) {
 		this.languageRepository = languageRepository;
 	}
+	//GET
 	// returns all languages
 	public List<Language> allLanguages(){
 		return languageRepository.findAll();
-	}
-	// creates a language
-	public Language createLanguage(Language newLang) {
-		return languageRepository.save(newLang);
 	}
 	// pull one language
 	public Language findLang(Long id) {
@@ -32,11 +29,18 @@ public class LanguageService {
 			return null;
 		}
 	}
-	// updates a book
+	//POST
+	// creates a language
+	public Language createLanguage(Language newLang) {
+		return languageRepository.save(newLang);
+	}
+	//PUT
+	// updates a language
 	public Language update(Language newLang) {
 		return languageRepository.save(newLang);
 	}
-	// deletes a book
+	//DELETE
+	// deletes a language
 	public void delete(Long id) {
 		Optional<Language> deleteLang = languageRepository.findById(id);
 		if(deleteLang.isPresent()) {

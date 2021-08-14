@@ -20,10 +20,13 @@ import com.navarro.languages.services.LanguageService;
 public class LanguageController {
 	private final LanguageService languageService;
 
+	
 	public LanguageController(LanguageService languageService) {
 		this.languageService = languageService;
 	}
 	
+	
+	// GETS all languages
 	@RequestMapping("/languages")
 	public String index(@ModelAttribute("language") Language language, Model model) {
 		List<Language> languages = languageService.allLanguages();
@@ -31,6 +34,8 @@ public class LanguageController {
 		return "/languages/index.jsp";
 	}
 	
+	
+	//POST creates a language
 	@RequestMapping(value="/new/languages", method=RequestMethod.POST)
 	public String create(@Valid @ModelAttribute("language") Language language, BindingResult result, Model model) {
 		if (result.hasErrors()) {
@@ -43,14 +48,17 @@ public class LanguageController {
 		}
 	}
 	
-	//show edit form page
+	
+	//GET show edit form page
     @RequestMapping("/languages/{id}/edit")
     public String edit(@PathVariable("id") Long id, Model model) {
         Language languages = languageService.findLang(id);
         model.addAttribute("language", languages);
         return "/languages/edit.jsp";
     }
-    // update method
+    
+    
+    //PUT update method
     @RequestMapping(value="/languages/{id}", method=RequestMethod.PUT)
     public String update(
     		@Valid @ModelAttribute("language") Language language, BindingResult result) {
@@ -62,14 +70,18 @@ public class LanguageController {
         }
     }
     
-    //shows a language detail
+    
+    
+    //GET shows a language details
     @RequestMapping("/languages/{id}/detail")
     public String showLang(@PathVariable("id") Long id, Model model) {
     	Language language = languageService.findLang(id);
     	model.addAttribute("language", language);
     	return"/languages/show.jsp";
     }
-    // delete 
+    
+    
+    //DELETE delete 
     @RequestMapping(value="/languages/{id}", method=RequestMethod.DELETE)
     public String destroy(@PathVariable("id") Long id) {
     	languageService.delete(id);
